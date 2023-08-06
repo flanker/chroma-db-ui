@@ -4,7 +4,7 @@ A simple UI for Chroma database.
 
 Using Ruby with [Sinatra](http://www.sinatrarb.com/) and [Chroma Ruby Client](https://github.com/mariochavez/chroma).
 
-![screely-1691256080299-min](https://github.com/flanker/chroma-db-ui/assets/109811/892f1795-bfa3-4e62-930c-be97abe6942a)
+![screely-1691280117525-min](https://github.com/flanker/chroma-db-ui/assets/109811/4fe06524-c61a-41cf-95ca-fd51cffb0f95)
 
 ## Run it locally
 
