@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.side-panel,
+.main-panel {
+    height: 100%;
+}
+.side-panel {
+    flex: 0 0 200px;
+}
+
+.main-panel {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.side-panel {
+    background-color: #f1f1f1;
+    width: 200px;
+    float: left;
+}
+
+.side-panel h2 {
+margin: 0;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.side-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-panel ul li {
+    margin: 10px 0;
+}
+
+.side-panel ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.side-panel ul li a.selected {
+    background-color: #ccc;
+}
+
+.side-panel ul li a:hover {
+    background-color: #999;
+}
+
+.main-panel {
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    table-layout: fixed;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 4px 12px;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2em;
+    line-height: 1em;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

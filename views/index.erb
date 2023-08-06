@@ -2,63 +2,51 @@
 <html lang="en-us">
 <head>
   <title>Chroma DB UI</title>
-  <style>
-      table {
-          border-collapse: collapse;
-          border: 1px solid #ccc;
-          table-layout: fixed;
-          width: 100%;
-      }
-      td, th {
-          padding: 4px 12px;
-          border: 1px solid #ccc;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          max-height: 2em;
-          line-height: 1em;
-      }
-  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<h1>Chroma DB UI</h1>
-<section>
-  <h2>Collections:</h2>
-  <ul>
-    <%- @collections.each do |collection| %>
-      <li><a href="/?collection=<%= collection.name %>"><%= h collection.name %></a></li>
-    <%- end %>
-  </ul>
-</section>
-<section>
-  <h2>Records:</h2>
-  <p>
-    Selected collection: <%= h @current_collection.name %>
-    |
-    Total count: <%= @total_records_count %>
-    |
-    <%- if @prev_page_number %>
-      <a href="<%= "/?collection=#{@current_collection.name}&page=#{@prev_page_number}" %>">Prev page</a>
-    <%- else %>
-      <a>Prev page</a>
-    <%- end %>
-    |
-    <%- if @next_page_number %>
-      <a href="<%= "/?collection=#{@current_collection.name}&page=#{@next_page_number}" %>">Next page</a>
-    <%- else %>
-      <a>Next page</a>
-    <%- end %>
-  </p>
-  <table>
-    <thead>
+<div class="header">
+  <h1>Chroma DB UI</h1>
+</div>
+<div class="container">
+  <section class="side-panel">
+    <h2>Collections</h2>
+    <ul>
+      <%- @collections.each do |collection| %>
+        <li>
+          <a href="/?collection=<%= collection.name %>" class="<%= "selected" if collection.name == @current_collection.name %>">
+            <%= h collection.name %>
+          </a>
+        </li>
+      <%- end %>
+    </ul>
+  </section>
+  <section class="main-panel">
+    <p>
+      Total count: <%= @total_records_count %>
+      |
+      <%- if @prev_page_number %>
+        <a href="<%= "/?collection=#{@current_collection.name}&page=#{@prev_page_number}" %>">Prev page</a>
+      <%- else %>
+        <a>Prev page</a>
+      <%- end %>
+      |
+      <%- if @next_page_number %>
+        <a href="<%= "/?collection=#{@current_collection.name}&page=#{@next_page_number}" %>">Next page</a>
+      <%- else %>
+        <a>Next page</a>
+      <%- end %>
+    </p>
+    <table>
+      <thead>
       <tr>
         <th>ID</th>
         <th>Embedding</th>
         <th>Document</th>
         <th>Metadata</th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <%- @records.each do |record| %>
         <tr>
           <td><%= record.id %></td>
@@ -67,7 +55,8 @@
           <td><%= record.metadata %></td>
         </tr>
       <%- end %>
-  </table>
-</section>
+      </table>
+  </section>
+</div>
 </body>
 </html>
