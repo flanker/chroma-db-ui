@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'chroma-db'
-gem 'sinatra'
+gem 'sinatra', '~> 3.1'
 gem 'puma'
