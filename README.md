@@ -22,3 +22,13 @@ To config the database, you can set the following environment variable:
 export CHROMA_URL=http://localhost:8000
 ruby app.rb
 ```
+
+## Run local Chroma in the docker
+
+A docker-compose file is provided to run Chroma in a docker container.
+
+```bash
+docker-compose up chroma
+```
+
+Note: You need to wait for the Chroma to be ready before running the UI.

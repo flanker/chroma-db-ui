@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    volumes:
+      - index_data:/index_data
+    ports:
+      - 8000:8000
+
+volumes:
+  index_data:
